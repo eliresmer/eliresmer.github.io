@@ -4,17 +4,17 @@
     --tertiary-bg-color: rgb(43, 42, 42);
 }
 
-a:link {
+nav a:link {
     color: white;
     text-decoration: underline;
 }
 
-a:visited {
+nav a:visited {
     color: white;
     text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
     color: white;
     text-decoration: none;
     text-shadow: 0px 0px 5px white;
@@ -31,6 +31,7 @@ main {
     max-width: 80%;
     margin: auto;
     min-height:700px;
+    
 }
 
 header {
@@ -46,13 +47,30 @@ nav {
     background-color: var(--secondary-bg-color);
     text-align: center;
     border-bottom: 3px solid var(--tertiary-bg-color);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top:10px;
 }
 
 nav a {
     margin: 10px;
 }
-
+.demoDescription {
+    margin:auto;
+    max-width:600px;
+    background-color:var(--secondary-bg-color);
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 4px solid var(--tertiary-bg-color);
+    border-bottom: 12px solid var(--tertiary-bg-color);
+    box-shadow: 4px 4px 4px rgb(43, 43, 43);
+}
+.demoDescription p {
+    font-size:smaller;
+    line-height:1em;
+    margin:0.5em;
+    margin-left:5em;
+}
 footer {
     text-align: center;
     border-top: 2px solid var(--tertiary-bg-color);
@@ -65,9 +83,12 @@ footer {
     display: flex;
     grid-template-columns: auto auto;
     padding-bottom: 50px;
+    
 }
 
-
+.box img {
+    margin:auto;
+}
 .box {
     border: 4px solid var(--tertiary-bg-color);
     background-color: rgb(56, 56, 56);
@@ -77,10 +98,35 @@ footer {
     margin-top: 20px;
     border-radius: 5px;
     border-bottom: 12px solid var(--tertiary-bg-color);
-    box-shadow: 5px 5px 5px rgb(38, 37, 37);
+    box-shadow: 4px 4px 4px rgb(43, 43, 43);
+    font-size:smaller;
+    max-width:280px;
 }
-.gamebox {
-    margin:auto;
+.demobox {
+    border: 4px solid var(--tertiary-bg-color);
+    background-color: rgb(56, 56, 56);
+    line-height: 1.5em;
+    padding: 8px;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-bottom: 12px solid var(--tertiary-bg-color);
+    box-shadow: 4px 4px 4px rgb(43, 43, 43);
+    font-size:smaller;
+    max-width:280px;
+    text-decoration:none;
+}
+.demobox a {
+    text-decoration:none;
+    color:white;
+}
+.demobox a:link {
+    text-decoration:none;
+    color:white;
+}
+.demobox a:visited {
+    text-decoration:none;
+    color:white;
 }
 canvas {
     padding-left: 0;
