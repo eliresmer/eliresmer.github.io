@@ -1,24 +1,14 @@
 :root {
+    --accent-color: white;
     --primary-bg-color: rgb(75, 71, 71);
     --secondary-bg-color: rgb(57, 56, 56);
     --tertiary-bg-color: rgb(43, 42, 42);
 }
-
-nav a:link {
-    color: white;
-    text-decoration: underline;
-}
-
-nav a:visited {
-    color: white;
+nav a {
+    color:rgb(168, 168, 250);
     text-decoration: none;
 }
 
-nav a:hover {
-    color: white;
-    text-decoration: none;
-    text-shadow: 0px 0px 5px white;
-}
 
 html {
     background-color: var(--secondary-bg-color);
@@ -28,13 +18,14 @@ html {
 
 main {
     background-color: var(--primary-bg-color);
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     min-height:700px;
-    
+    padding-bottom:50px;
 }
 
 header {
+    color: var(--accent-color);
     background-color: var(--secondary-bg-color);
     text-align: center;
     padding: 5px;
@@ -56,21 +47,9 @@ nav a {
 }
 .demoDescription {
     margin:auto;
-    max-width:600px;
-    background-color:var(--secondary-bg-color);
-    padding: 8px;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 4px solid var(--tertiary-bg-color);
-    border-bottom: 12px solid var(--tertiary-bg-color);
-    box-shadow: 4px 4px 4px rgb(43, 43, 43);
+    width:400px;
 }
-.demoDescription p {
-    font-size:smaller;
-    line-height:1em;
-    margin:0.5em;
-    margin-left:5em;
-}
+
 footer {
     text-align: center;
     border-top: 2px solid var(--tertiary-bg-color);
@@ -83,13 +62,14 @@ footer {
     display: flex;
     grid-template-columns: auto auto;
     padding-bottom: 50px;
-    
 }
 
 .box img {
     margin:auto;
 }
 .boxOuter {
+    font-weight:700;
+    color: var(--accent-color);
     background-color: var(--tertiary-bg-color);
     line-height: 1.5em;
     padding: 8px;
@@ -102,10 +82,34 @@ footer {
     box-shadow: 0px 0px 10px rgb(43, 43, 43);
     max-width:400px;
 }
+.gameContainer {
+    font-weight:normal;
+    color:white;
+    background-color: var(--tertiary-bg-color);
+    line-height: 1.5em;
+    padding: 5px;
+    margin: auto;
+    max-width:1000px;
+    margin-top: 50px;
+    border: 1px solid rgb(28, 27, 27);
+    border-top:1px solid rgb(98, 95, 95);
+    border-radius: 1px;
+    box-shadow: 0px 0px 10px rgb(43, 43, 43);
+}
+table {
+    border-spacing:0px;
+}
+td {
+    border:1px solid white;
+    padding:4px;
+    
+}
 .box {
-    padding:5px;
+    font-weight:normal;
+    color:white;
+    padding:3%;
+    padding-top:10px;
     background-color: rgb(56, 56, 56);
-    font-size:smaller;
     border-radius: 1px;
     box-shadow:inset 0px 0px 5px black;
 }
@@ -126,16 +130,9 @@ footer {
     text-decoration:none;
     color:white;
 }
-.boxOuter a:link {
-    text-decoration:none;
-    color:white;
-}
-.boxOuter a:visited {
-    text-decoration:none;
-    color:white;
-}
+
 .box a:link, .box a:visited, .box a{
-    color:rgb(114, 114, 248);
+    color:rgb(168, 168, 250);
 }
 canvas {
     padding-left: 0;

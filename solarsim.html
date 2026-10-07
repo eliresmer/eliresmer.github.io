@@ -21,34 +21,59 @@
 <body>
     <header>
         <h1>My Website</h1>
-
-
     </header>
 
     <main>
-
         <nav>
             /
             <a href="index.html">Home</a>/
             <a href="guides.html">Guides</a>/
             <a href="demos.html">Demos</a>/
         </nav>
-        <h1 style="text-align:center">Solar Sim</h1>
+        
 
-        <canvas id="myCanvas" height="500px" width="1000px"></canvas>
+
 
         <script type='module' src="solarsim.js"></script>
-        <div class="boxOuter">
-            <div class="demoDescription">
-                <p>This is a little orbit simulation I started in September 2026 as a forray rendering spaces in three
+
+
+        <div class="gameContainer">
+            <h3 style="text-align:center">Solar Sim</h3>
+            <div class="box">
+                
+                <canvas id="myCanvas" height="500px" width="800px"></canvas>
+                <p>This is a little orbit simulation I started in September 2026 as a forray rendering spaces in
+                    three
                     dimensions.
                     I chose an orbit sim because I've made some 2D ones in the past, and it was relatively easy to
                     translate that to 3D.
-                    The main challenge was getting the position of a 3D object and translating that to a position on a
+                    The main challenge was getting the position of a 3D object and translating that to a position on
+                    a
                     2D screen.
                     Otherwise, the planets are easy to draw. They're just circles.</p>
+                    <p><h4>Controls</h4>
+                        <table>
+                            <tr>
+                                <td>W, A, S, D</td>
+                                <td>Strafe, forwards/backwards</td>
+                            </tr>
+                            <tr>
+                                <td>Space, C</td>
+                                <td>Move up/down</td>
+                            </tr>
+                            <tr>
+                                <td>Q, E</td>
+                                <td>Look left/right</td>
+                            </tr>
+                            <tr>
+                                <td>Z, X</td>
+                                <td>Look up/down</td>
+                            </tr>
+                        </table>
+                    </p>
             </div>
         </div>
+
 
     </main>
 
