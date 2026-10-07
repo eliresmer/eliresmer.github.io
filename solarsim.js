@@ -6,18 +6,29 @@ const ctx = canvas.getContext("2d");
 const stars = [];
 const planets = [];
 const planetNames = [];
-const G = 6.67430 / 1000
+const G = 6.67430 / 10000
 let turn = null;
 let focusNum = -1;
 let lastUpdate = Date.now();
 let timeSinceFocus = 100;
 let currentFocus = 'None';
-const origin = new Vector3(canvas.width / 2, canvas.height / 2, 0);
+const origin = new Vector3(0, 0, 0);
 
-const cameraPosition = new Vector3(0, 100, 500);
-const cameraOrientation = new Vector3(-.4, 0, 0);
+const cameraPosition = new Vector3(canvas.width / 4, canvas.height / 4, 400);
+const cameraOrientation = new Vector3(0, 0, 0);
 
+function isoPosition(object) {
+    let x = (object.position.x);
+    let y = (object.position.y);
+    let z = (object.position.z);
 
+    let a = (50);
+
+    let u = x*Math.cos(a) + y*Math.cos(a - 2.094) + z*Math.cos(a - 2.094) + canvas.width / 2
+    let v = x*Math.sin(a) + y*Math.sin(a - 2.094) + z*Math.sin(a - 2.094) + canvas.height / 2
+
+    return new Vector2(u, v)
+}
 function screenPosition(objectPosition, cameraPosition, cameraOrientation) {
     let x = objectPosition.x - cameraPosition.x;
     let y = objectPosition.y - cameraPosition.y;
@@ -31,8 +42,7 @@ function screenPosition(objectPosition, cameraPosition, cameraOrientation) {
     let dx = cosy * (sinz * y + cosz * x) - siny * z;
     let dy = sinx * (cosy * z + siny * (sinz * y + cosz * x)) + cosx * (cosz * y - sinz * x);
     let dz = cosx * (cosy * z + siny * (sinz * y + cosz * x)) - sinx * (cosz * y - sinz * x);
-    let e = origin.subtract(cameraPosition);
-    //let e = cameraPosition;
+    let e =  cameraPosition
     let bx = (e.z / dz) * dx + e.x;
     let by = (e.z / dz) * dy + e.y;
     return new Vector2(bx, by);
@@ -81,7 +91,7 @@ function start() {
     planets.push(new Planet("Sun")
         .setPosition(new Vector3(0, 0, 0))
         .setRadius(4000)
-        .setMass(332950)
+        .setMass(1988475)
         .setVelocity(new Vector3(0, 0, 0))
         .setColour("yellow")
     );
@@ -89,14 +99,14 @@ function start() {
         .setPosition(new Vector3(0, 0, 69.8169))
         .setRadius(1000)
         .setMass(0.0553)
-        .setVelocity(new Vector3(4.79, 0, 0))
+        .setVelocity(new Vector3(3.9, 0, 0))
         .setColour("white")
     );
     planets.push(new Planet("Venus")
         .setPosition(new Vector3(0, 0, 108.94))
         .setRadius(1000)
         .setMass(0.815)
-        .setVelocity(new Vector3(3.5, 0, 0))
+        .setVelocity(new Vector3(3.474, 0, 0))
         .setColour("white")
     );
     
@@ -104,7 +114,7 @@ function start() {
         .setPosition(new Vector3(0, 0, 152.097))
         .setRadius(1000)
         .setMass(1)
-        .setVelocity(new Vector3(2.98, 0, 0))
+        .setVelocity(new Vector3(2.94, 0, 0))
         .setColour("blue")
     );
     planets.push(new Planet("Mars")
@@ -148,10 +158,10 @@ function start() {
         console.log(event.key);
         
         if (event.key == "d") {
-            cameraPosition.x += 5
+            cameraPosition.x -= 5
         }
         if (event.key == "a") {
-            cameraPosition.x -= 5
+            cameraPosition.x += 5
         }
         if (event.key == "w") {
             cameraPosition.z -= 5
@@ -161,11 +171,11 @@ function start() {
         }
 
         if (event.key == "c") {
-            cameraPosition.y += 5
+            cameraPosition.y -= 5
         }
         if (event.key == " ") {
             event.preventDefault();
-            cameraPosition.y -= 5
+            cameraPosition.y += 5
         }
 
 
@@ -224,6 +234,7 @@ function nextFocus() {
 }
 
 function draw() {
+    
     timeSinceFocus++;
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -250,7 +261,7 @@ function main() {
 
     var now = Date.now();
     var dt = (now - lastUpdate) / 1000;
-    console.log(dt);
+    //console.log(dt);
 
     for (let attractor of planets) {
         for (let attractee of planets) {
@@ -260,8 +271,7 @@ function main() {
             else {
                 let distance = attractor.position.subtract(attractee.position).magnitude();
 
-                let force = attractor.position.subtract(attractee.position).divide(distance * distance * distance).multiply(attractor.mass * G);
-                force.multiply(dt);
+                let force = attractor.position.subtract(attractee.position).divide(distance * distance * distance).multiply(attractor.mass).multiply(G);
                 attractee.velocity = attractee.velocity.subtract(force);
             }
         }
