@@ -68,7 +68,12 @@ footer {
 }
 
 .box img {
+    border:3px solid var(--tertiary-bg-color);
     margin:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    box-shadow: 0px 0px 5px rgb(41, 40, 40);
+    border-radius:1px;
 }
 .boxOuter {
     font-weight:700;
@@ -108,6 +113,7 @@ td {
     
 }
 .box {
+    display:grid;
     font-weight:normal;
     color:white;
     padding:3%;
@@ -118,11 +124,16 @@ td {
 }
 
 .demobox img {
+    border:3px solid var(--tertiary-bg-color);
     margin:auto;
-    width:100%;
-
+    margin-top:10px;
+    margin-bottom:10px;
+    box-shadow: 0px 0px 5px rgb(41, 40, 40);
+    border-radius:1px;
+    width:90%;
 }
 .demobox {
+    display:grid;
     padding:10px;
     background-color: rgb(56, 56, 56);
     font-size:smaller;
