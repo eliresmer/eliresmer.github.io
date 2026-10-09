@@ -17,8 +17,8 @@ html {
 }
 
 main {
-    background: #333333;
-background: linear-gradient(360deg, rgba(57, 56, 56, 1) 0%, rgba(146, 44, 230, 1) 100%);
+    background: #ffe49e;
+background: linear-gradient(360deg, rgba(255, 228, 158, 1) 0%, rgba(115, 187, 250, 1) 100%);
 
     max-width: 100%;
     margin: auto;
