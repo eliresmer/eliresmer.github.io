@@ -17,11 +17,14 @@ html {
 }
 
 main {
-    background-color: var(--primary-bg-color);
+    background: #333333;
+background: linear-gradient(360deg, rgba(57, 56, 56, 1) 0%, rgba(146, 44, 230, 1) 100%);
+
     max-width: 100%;
     margin: auto;
     min-height:700px;
     padding-bottom:50px;
+    background-size:cover;
 }
 
 header {
@@ -56,6 +59,9 @@ nav a {
 footer {
     text-align: center;
     
+}
+footer p {
+    line-height:.5em;
 }
 
 .boxes {
@@ -103,6 +109,7 @@ figcaption, figure img {
     border-radius: 1px;
     box-shadow: 0px 0px 10px rgb(43, 43, 43);
     max-width:400px;
+    min-width:200px;
 }
 .bigBox {
     font-weight:normal;
@@ -135,8 +142,11 @@ td {
     background-color: rgb(56, 56, 56);
     border-radius: 1px;
     box-shadow:inset 0px 0px 5px black;
+    padding-left:20px;
 }
-
+.box ul{
+    padding-left:50px;
+}
 .demobox img {
     border:3px solid var(--tertiary-bg-color);
     margin:auto;
