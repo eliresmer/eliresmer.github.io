@@ -18,8 +18,8 @@ html {
 
 main {
     background: #ffe49e;
-background: linear-gradient(360deg, rgba(255, 228, 158, 1) 0%, rgba(115, 187, 250, 1) 100%);
-
+    background: linear-gradient(360deg, rgba(255, 228, 158, 1) 0%, rgba(115, 187, 250, 1) 100%);
+    min-height: 50vh;
     max-width: 100%;
     margin: auto;
     min-height:700px;
