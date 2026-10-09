@@ -58,7 +58,7 @@ nav a {
 
 footer {
     text-align: center;
-    
+    max-height: 300px;
 }
 footer p {
     line-height:.5em;
