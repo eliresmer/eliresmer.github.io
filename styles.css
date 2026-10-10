@@ -125,7 +125,8 @@ figcaption, figure img {
     line-height: 1.5em;
     padding: 5px;
     margin: auto;
-    max-width:1000px;
+    max-width:1200px;
+    min-width:1000px;
     margin-top: 50px;
     border: 1px solid rgb(28, 27, 27);
     border-top:1px solid rgb(98, 95, 95);
